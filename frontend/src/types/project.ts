@@ -8,7 +8,7 @@ export type Project = {
     tasks: Task[]; // An array of Task objects
   };
   
-  export type ProjectUpdate = {
+export type ProjectUpdate = {
     title?: string;
     description?: string;
     tasks?: TaskUpdate[]; // An array of TaskUpdate objects

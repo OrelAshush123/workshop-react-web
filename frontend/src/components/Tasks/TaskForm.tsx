@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { DataContext } from "../App";
-import { createTask, updateTask } from "../lib/apiClient";
-import { TaskUpdate } from "../types/task";
-import { Button } from "../elements/button/Button";
+import { DataContext } from "../../App";
+import { createTask, updateTask } from "../../lib/apiClient";
+import { TaskUpdate } from "../../types/task";
+import { Button } from "../../elements/button/Button";
 
 export const TaskForm = () => {
   const { id } = useParams();

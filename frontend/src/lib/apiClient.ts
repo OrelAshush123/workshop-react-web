@@ -64,7 +64,7 @@ export const deleteTask = (taskId: string) => {
   });
 };
 
-export const deleteTaskProject = (taskId: string) => {
+export const deleteProject = (taskId: string) => {
   return fetch(`${SERVER_URL}/api/v1/project/${taskId}`, {
     method: "DELETE",
   });

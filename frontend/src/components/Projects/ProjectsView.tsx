@@ -1,11 +1,11 @@
 import React from "react";
-import { DataContext } from "../App";
-import { Button } from "../elements/button/Button";
-import { TaskCard } from "./TaskCard";
+import { DataContext } from "../../App";
+import { Button } from "../../elements/button/Button";
+import { ProjectCard } from "./ProjectCard";
 
 
-export const TasksView = () => {
-  const { tasks } = React.useContext(DataContext);
+export const ProjectsView = () => {
+  const { projects } = React.useContext(DataContext);
   return (
     <div
       style={{
@@ -15,10 +15,10 @@ export const TasksView = () => {
         padding: "20px",
       }}
     >
-      <h1>My Tasks</h1>
+      <h1>My Projects</h1>
       <div>
-        {tasks.map((task) => (
-          <TaskCard key={task._id} task={task} />
+        {projects.map((project) => (
+          <ProjectCard key={project._id} project={project} />
         ))}
       </div>
 

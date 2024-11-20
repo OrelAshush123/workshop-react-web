@@ -1,7 +1,7 @@
 import React from "react";
-import { deleteTask } from "../lib/apiClient";
-import { Task } from "../types/task";
-import { Button } from "../elements/button/Button";
+import { deleteTask } from "../../lib/apiClient";
+import { Task } from "../../types/task";
+import { Button } from "../../elements/button/Button";
 
 type Props = {
   task: Task;
