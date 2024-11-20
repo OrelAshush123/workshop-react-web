@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pymongo import MongoClient
 from task_routes import tasks_router
+from project_router import projects_router
 
 
 # Define startup and shutdown event handlers
@@ -32,3 +33,4 @@ app.add_middleware(
 
 # Include the router
 app.include_router(tasks_router, tags=["tasks"], prefix="/api/v1/tasks")
+app.include_router(projects_router, tags=["project"], prefix="/api/v1/project")

@@ -36,7 +36,7 @@ export const ProjectForm = () => {
         console.log(project);
       })
       .then(() => {
-        document.location.href = "/";
+        //document.location.href = "/";
       });
   };
 

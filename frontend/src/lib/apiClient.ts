@@ -21,13 +21,14 @@ export const createTask = async (task: TaskUpdate): Promise<Task> => {
   }).then((res) => res.json());
 };
 
-export const createProject = async (task: ProjectUpdate): Promise<Task> => {
+export const createProject = async (project: ProjectUpdate): Promise<Project> => {
+  console.log("p:",project)
   return fetch(`${SERVER_URL}/api/v1/project`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(task),
+    body: JSON.stringify(project),
   }).then((res) => res.json());
 };
 
@@ -48,7 +49,7 @@ export const updateTask = async (
 export const updateProject = async (
   id: string,
   task: ProjectUpdate
-): Promise<Task> => {
+): Promise<Project> => {
   return fetch(`${SERVER_URL}/api/v1/project/${id}`, {
     method: "PUT",
     headers: {

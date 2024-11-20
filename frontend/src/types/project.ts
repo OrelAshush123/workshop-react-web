@@ -11,5 +11,5 @@ export type Project = {
 export type ProjectUpdate = {
     title?: string;
     description?: string;
-    tasks?: TaskUpdate[]; // An array of TaskUpdate objects
+    tasks?: TaskUpdate[]; 
   };
