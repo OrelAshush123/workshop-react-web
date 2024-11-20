@@ -3,6 +3,7 @@ import { DataContext } from "../App";
 import { Button } from "../elements/button/Button";
 import { TaskCard } from "./TaskCard";
 
+
 export const TasksView = () => {
   const { tasks } = React.useContext(DataContext);
   return (
@@ -29,6 +30,16 @@ export const TasksView = () => {
       >
         Add Task
       </Button>
+      <Button
+        variant="primary-button"
+        onClick={() => {
+          document.location.href = "/project-form";
+        }}
+      >
+        Add Project
+      </Button>
+
+
     </div>
   );
 };

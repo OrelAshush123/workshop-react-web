@@ -9,7 +9,7 @@ from task_routes import tasks_router
 # Define startup and shutdown event handlers
 async def startup_db_client():
     app.mongodb_client = MongoClient(
-        "mongodb+srv://<user>:<password>@cluster0.04aztqb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+        "mongodb+srv://orelasc11:orel1234567@orelashush.nunws.mongodb.net/?retryWrites=true&w=majority&appName=orelAshush"
     )
     app.database = app.mongodb_client["bootcamp"]
 
