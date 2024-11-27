@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "stylelint.vscode-stylelint",
+    "streetsidesoftware.code-spell-checker",
+    "eamodio.gitlens",
+    "redhat.vscode-yaml",
+    "aaron-bond.better-comments",
+    "naumovs.color-highlight", // recommended setting: in vscode settings (press ctrl+,) search for: "color-highlight.markerType" and set to "underline"
+    "mikestead.dotenv",
+    "usernamehw.errorlens",
+    "biomejs.biome",
+    "charliermarsh.ruff" // ruff because pylint is so slow
+  ]
+}

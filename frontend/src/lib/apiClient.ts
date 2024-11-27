@@ -1,7 +1,7 @@
 import { Project, ProjectUpdate } from "../types/project";
 import { Task, TaskUpdate } from "../types/task";
 
-const SERVER_URL = "http://localhost:8000";
+const SERVER_URL = window.location.origin;
 
 export const getTasks = async (): Promise<Task[]> => {
   return fetch(`${SERVER_URL}/api/v1/tasks`).then((res) => res.json());

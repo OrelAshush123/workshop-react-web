@@ -1,17 +1,6 @@
-version: '3.7'
-
 services:
-  mongodb:
-    image: mongo:4.2.24
-    ports:
-      - 27017:27017
-    volumes:
-      - mongo_data:/data/db
-    env_file: .env
-    restart: unless-stopped
-
   backend:
-    image: blelia/aws-workshop:backend-${SERVICE_VERSION}
+    image: blelia/aws-workshop-backend:0.0.1
     build:
       dockerfile: backend/Dockerfile
       context: .
@@ -21,15 +10,11 @@ services:
     restart: unless-stopped
 
   frontend:
-    image: blelia/aws-workshop:frontend-${SERVICE_VERSION}
+    image: blelia/aws-workshop-frontend:0.0.1
     build:
       dockerfile: frontend/Dockerfile
       context: .
     ports:
-      - 443:443
+      - 80:80
     env_file: .env
     restart: unless-stopped
-
-volumes:
-  mongo_data:
-  

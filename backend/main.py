@@ -1,17 +1,29 @@
 # credit: https://github.com/mongodb-developer/pymongo-fastapi-crud
 
+import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pymongo import MongoClient
+
 from task_routes import tasks_router
 from project_router import projects_router
 
 
 # Define startup and shutdown event handlers
 async def startup_db_client():
-    app.mongodb_client = MongoClient(
-        "mongodb+srv://orelasc11:orel1234567@orelashush.nunws.mongodb.net/?retryWrites=true&w=majority&appName=orelAshush"
-    )
+    # because we do not want to hardcode the connection string in the code,
+    # we will use an environment variable
+    # to run this code, you need to set the MONGO_URI environment variable to your MongoDB connection
+    # string. You can do this by running the following command in your terminal:
+    # export MONGO_URI="mongodb+srv://<user>:<password>@<some-dns-address>?retryWrites=true&w=majority&appName=<your-app-name>"
+    # OR you can create a .env file in the root of your project and add the following line:
+    # MONGO_URI="mongodb+srv://<user>:<password>@<some-dns-address>?retryWrites=true&w=majority&appName=<your-app-name>"
+    mongo_uri = os.getenv("MONGO_URI")
+    assert (
+        mongo_uri
+    ), "MONGO_URI env var is required, please set it to your MongoDB connection"
+    app.mongodb_client = MongoClient(mongo_uri)
     app.database = app.mongodb_client["bootcamp"]
 
 

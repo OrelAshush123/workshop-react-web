@@ -1,4 +1,4 @@
-fastapi[all]==0.95.1
-pymongo==4.3.3
-pydantic==1.10.7
-uvicorn==0.22.0
+fastapi[all]
+pymongo
+pydantic
+uvicorn

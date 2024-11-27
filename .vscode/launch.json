@@ -6,14 +6,22 @@
   "configurations": [
     {
       "name": "Python: FastAPI",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "module": "uvicorn",
+      "args": ["main:app", "--reload"],
       "cwd": "${workspaceFolder}/backend",
-      "envFile": "${workspaceFolder}/backend/.env",
-      "args": ["main:app"],
+      "python": "${command:python.interpreterPath}",
+      "envFile": "${workspaceFolder}/.env",
       "jinja": true,
       "justMyCode": true
+    },
+    {
+      "type": "node-terminal",
+      "name": "Nodejs: WebApp",
+      "request": "launch",
+      "command": "npm start",
+      "cwd": "${workspaceFolder}/frontend"
     }
   ]
 }
